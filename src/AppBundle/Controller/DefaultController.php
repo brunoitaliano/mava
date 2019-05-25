@@ -2,10 +2,10 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use AppBundle\Entity\User;
 
 class DefaultController extends Controller
 {
@@ -29,6 +29,7 @@ class DefaultController extends Controller
    */
     public function aboutAction($name)
     {
+      $user =  null;
       if ($name)
       {
         $user = $this->getDoctrine()
